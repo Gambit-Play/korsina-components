@@ -1,32 +1,37 @@
 import { css } from 'styled-components';
 
-// Funstion styles
+// Funstion Styles
 export const functionStyles = {
 	// Unit: px
-	radiusPX: number => `${number * 2}px`,
-	spacingPX: number => `${number * 2}px`,
-	fontSizePX: number => `${number * 2}px`,
+	radiusPX: numberInPX => `${numberInPX * 2}px`,
+	spacingPX: numberInPX => `${numberInPX * 2}px`,
+	fontSizePX: numberInPX => `${numberInPX * 2}px`,
 
 	// Unit: %
-	radiusPRCT: number => `${number}%`,
-	spacingPRCT: number => `${number}%`,
-	fontSizePRCT: number => `${number}%`,
+	radiusPRCT: numberInPRCT => `${numberInPRCT}%`,
+	spacingPRCT: numberInPRCT => `${numberInPRCT}%`,
+	fontSizePRCT: numberInPRCT => `${numberInPRCT}%`,
+
+	// Unit: rem
+	radiusREM: numberInPX => `${numberInPX / 16}rem`,
+	spacingREM: numberInPX => `${numberInPX / 16}rem`,
+	fontSizeREM: numberInPX => `${numberInPX / 16}rem`,
 };
 
-// Global color styles
+// Global Color Styles
 export const colorStyles = {
-	// Colors Background
+	// Background Colors
 	bgPrimary: css`
-		background-color: linear-gradient(225deg, #1de9b6 0%, #1dc4e9 100%);
+		background: linear-gradient(225deg, #1de9b6 0%, #1dc4e9 100%);
 	`,
 	bgSecondary: css`
-		background-color: linear-gradient(225deg, #a389d4 0%, #899ed4 100%);
+		background: linear-gradient(225deg, #a389d4 0%, #899ed4 100%);
 	`,
 	bgColor1: css`
-		background-color: linear-gradient(225deg, #04a9f5 0%, #049df5 100%);
+		background: linear-gradient(225deg, #04a9f5 0%, #049df5 100%);
 	`,
 
-	// Greyscale
+	// Greyscale Colors
 	greyScale1: '#202224',
 	greyScale2: '#393C40',
 	greyScale3: '#474B4F',
@@ -38,41 +43,45 @@ export const colorStyles = {
 	greyScale9: '#FFFFFF',
 };
 
-// Global text styles
+// Global Text Styles
 export const textStyles = {
 	heading1: css`
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
-		font-size: 44px;
+		font-size: ${functionStyles.fontSizeREM(44)};
 	`,
 	heading2: css`
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
-		font-size: 26px;
+		font-size: ${functionStyles.fontSizeREM(26)};
 	`,
 	heading3: css`
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
-		font-size: 18px;
+		font-size: ${functionStyles.fontSizeREM(18)};
+		letter-spacing: 1.25px;
 	`,
 	heading4: css`
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
-		font-size: 12px;
+		font-size: ${functionStyles.fontSizeREM(12)};
+		letter-spacing: 0.4px;
 	`,
 	heading5: css`
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 600;
-		font-size: 10px;
+		font-size: ${functionStyles.fontSizeREM(10)};
+		letter-spacing: 1.5px;
 	`,
 	button: css`
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 600;
-		font-size: 10px;
+		font-size: ${functionStyles.fontSizeREM(10)};
+		letter-spacing: 1.25px;
 	`,
 };
 
-// Global alignment styles
+// Global Alignment Styles
 export const alignStyles = {
 	topLeft: css`
 		display: flex;
@@ -125,7 +134,7 @@ export const alignStyles = {
 	`,
 };
 
-// Global margin styles
+// Global Mrgin Styles
 export const marginStyles = {
 	margin: margin => css`
 		margin: ${functionStyles.spacingPX(margin)};
@@ -142,9 +151,17 @@ export const marginStyles = {
 	marginRight: marginRight => css`
 		margin-right: ${functionStyles.spacingPX(marginRight)};
 	`,
+	marginX: marginX => css`
+		margin-left: ${functionStyles.spacingPX(marginX)};
+		margin-right: ${functionStyles.spacingPX(marginX)};
+	`,
+	marginY: marginY => css`
+		margin-top: ${functionStyles.spacingPX(marginY)};
+		margin-bottom: ${functionStyles.spacingPX(marginY)};
+	`,
 };
 
-// Global padding styles
+// Global Padding Styles
 export const paddingStyles = {
 	padding: padding => css`
 		padding: ${functionStyles.spacingPX(padding)};
@@ -161,9 +178,17 @@ export const paddingStyles = {
 	paddingRight: paddingRight => css`
 		padding-right: ${functionStyles.spacingPX(paddingRight)};
 	`,
+	paddingX: paddingX => css`
+		padding-left: ${functionStyles.spacingPX(paddingX)};
+		padding-right: ${functionStyles.spacingPX(paddingX)};
+	`,
+	paddingY: paddingY => css`
+		padding-top: ${functionStyles.spacingPX(paddingY)};
+		padding-bottom: ${functionStyles.spacingPX(paddingY)};
+	`,
 };
 
-// Global size styles
+// Global Size Styles
 export const sizeStyles = {
 	heightPX: height => css`
 		height: ${functionStyles.spacingPX(height)};
@@ -174,5 +199,15 @@ export const sizeStyles = {
 	sizePX: size => css`
 		height: ${functionStyles.spacingPX(size)};
 		width: ${functionStyles.spacingPX(size)};
+	`,
+};
+
+// Gloabal Shadow Styles
+export const shadowStyles = {
+	shadow1: css`
+		box-shadow: 0 4px 10px 0 rgb(0 0 0 / 32%);
+	`,
+	shadow2: css`
+		box-shadow: 0 8px 16px 0 rgb(0 0 0 / 32%);
 	`,
 };
