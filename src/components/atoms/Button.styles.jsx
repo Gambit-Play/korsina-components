@@ -6,6 +6,8 @@ import {
 	colorStyles,
 	functionStyles,
 	shadowStyles,
+	animationStyles,
+	borderStyles,
 } from '../../styles/global.styles';
 
 // Default Button Style
@@ -14,10 +16,10 @@ const defaultStyle = css`
 	${textStyles.button}
     ${paddingStyles.paddingY(8)}
     ${paddingStyles.paddingX(8)}
+	${borderStyles.borderRadius1}
 	min-width: ${functionStyles.spacingPX(80)};
-	border-radius: ${functionStyles.radiusPX(2)};
 	text-transform: uppercase;
-	transition: box-shadow 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: all ${animationStyles.animation1};
 
 	&:hover {
 		${shadowStyles.shadow2}
@@ -60,17 +62,18 @@ export const Button = styled.button`
 export const ButtonOutlined = styled.button`
 	${defaultStyle}
 	${paddingStyles.paddingY(7)}
+	${borderStyles.border1(colorStyles.greyScale5)}
 
 	color: ${colorStyles.greyScale5};
-	border: 2px solid ${colorStyles.greyScale5};
 	background-color: transparent;
 
+	// Disabled Style
 	${props =>
 		props.isDisabled &&
 		css`
-			color: ${colorStyles.greyScale6};
-			border: 2px solid ${colorStyles.greyScale6};
-
+			${borderStyles.border1(colorStyles.greyScale6)}
 			${disabledStyle}
+			
+			color: ${colorStyles.greyScale6};
 		`}
 `;

@@ -20,6 +20,9 @@ export const functionStyles = {
 
 // Global Color Styles
 export const colorStyles = {
+	primary: '#04A9F5',
+	seconsary: '#1DE9B6',
+
 	// Background Colors
 	bgPrimary: css`
 		background: linear-gradient(225deg, #1de9b6 0%, #1dc4e9 100%);
@@ -30,6 +33,12 @@ export const colorStyles = {
 	bgColor1: css`
 		background: linear-gradient(225deg, #04a9f5 0%, #049df5 100%);
 	`,
+
+	// State Colors
+	success: '#4caf50',
+	warning: '#F5C22B',
+	error: '#F44236',
+	info: '#04A9F5',
 
 	// Greyscale Colors
 	greyScale1: '#202224',
@@ -210,4 +219,18 @@ export const shadowStyles = {
 	shadow2: css`
 		box-shadow: 0 8px 16px 0 rgb(0 0 0 / 32%);
 	`,
+};
+
+// Gloabal Border Styles
+export const borderStyles = {
+	borderRadius1: css`
+		border-radius: ${functionStyles.radiusPX(2)};
+	`,
+	border1: borderColor => css`
+		border: 2px solid ${borderColor};
+	`,
+};
+
+export const animationStyles = {
+	animation1: '300ms cubic-bezier(0.25, 0.8, 0.25, 1)',
 };
