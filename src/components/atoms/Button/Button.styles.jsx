@@ -8,7 +8,7 @@ import {
 	shadowStyles,
 	animationStyles,
 	borderStyles,
-} from '../../styles/global.styles';
+} from '../../../styles/global.styles';
 
 // Default Button Style
 const defaultStyle = css`
@@ -61,7 +61,7 @@ export const Button = styled.button`
 
 export const ButtonOutlined = styled.button`
 	${defaultStyle}
-	${paddingStyles.paddingY(7)}
+	${paddingStyles.paddingY(8)}
 	${borderStyles.border1(colorStyles.greyScale5)}
 
 	color: ${colorStyles.greyScale5};

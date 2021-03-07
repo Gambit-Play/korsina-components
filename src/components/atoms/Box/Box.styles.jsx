@@ -4,7 +4,7 @@ import {
 	marginStyles,
 	paddingStyles,
 	sizeStyles,
-} from '../../styles/global.styles';
+} from '../../../styles/global.styles';
 
 export const Box = styled.div`
 	// Size properties

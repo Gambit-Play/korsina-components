@@ -30,6 +30,9 @@ export const colorStyles = {
 	bgSecondary: css`
 		background: linear-gradient(225deg, #a389d4 0%, #899ed4 100%);
 	`,
+	bgNone: css`
+		background: none;
+	`,
 	bgColor1: css`
 		background: linear-gradient(225deg, #04a9f5 0%, #049df5 100%);
 	`,
@@ -226,8 +229,11 @@ export const borderStyles = {
 	borderRadius1: css`
 		border-radius: ${functionStyles.radiusPX(2)};
 	`,
+	borderNone: css`
+		border: none;
+	`,
 	border1: borderColor => css`
-		border: 2px solid ${borderColor};
+		border: 1px solid ${borderColor};
 	`,
 };
 
