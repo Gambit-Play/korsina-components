@@ -11,9 +11,9 @@ import {
 const defaultSize = 10;
 
 export const CheckBoxBlock = styled.label`
-	${sizeStyles.heightPX(defaultSize)}
 	${alignStyles.centerLeft}
 	${textStyles.heading4}
+	${sizeStyles.heightPX(defaultSize)}
 	${paddingStyles.paddingLeft(18)}
 
 	position: relative;
@@ -30,8 +30,8 @@ export const CheckBoxBlock = styled.label`
 	span {
 		${alignStyles.center}
 		${borderStyles.borderRadius1}
-		${borderStyles.border1(colorStyles.greyScale6)}
 		${colorStyles.bgNone}
+		${borderStyles.border1(colorStyles.greyScale6)}
 		${sizeStyles.sizePX(defaultSize)}
 
 		position: absolute;

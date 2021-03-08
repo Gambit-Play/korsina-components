@@ -15,10 +15,10 @@ import {
 export const InputIcon = styled.div`
 	${alignStyles.center}
 	${textStyles.heading4}
+    ${borderStyles.borderRadius1}
     ${paddingStyles.paddingY(3)}
     ${paddingStyles.paddingX(8)}
     ${borderStyles.border1(colorStyles.greyScale5)}
-    ${borderStyles.borderRadius1}
 
 	transition: all ${animationStyles.animation1};
 
@@ -73,9 +73,9 @@ export const InputIcon = styled.div`
 `;
 
 export const ErrorMessage = styled.p`
+	${textStyles.heading5}
 	${paddingStyles.paddingTop(3)}
 	${marginStyles.marginTop(0)}
-	${textStyles.heading5}
 
 	color: transparent;
 	transform: translate(16px);

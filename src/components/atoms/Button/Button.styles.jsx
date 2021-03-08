@@ -14,9 +14,10 @@ import {
 const defaultStyle = css`
 	${alignStyles.center}
 	${textStyles.button}
+	${borderStyles.borderRadius1}
     ${paddingStyles.paddingY(8)}
     ${paddingStyles.paddingX(8)}
-	${borderStyles.borderRadius1}
+	
 	min-width: ${functionStyles.spacingPX(80)};
 	text-transform: uppercase;
 	transition: all ${animationStyles.animation1};
@@ -52,10 +53,10 @@ export const Button = styled.button`
 	${props =>
 		props.isDisabled &&
 		css`
+			${disabledStyle}
+
 			background: ${colorStyles.greyScale7};
 			color: ${colorStyles.greyScale5};
-
-			${disabledStyle}
 		`}
 `;
 
@@ -71,9 +72,10 @@ export const ButtonOutlined = styled.button`
 	${props =>
 		props.isDisabled &&
 		css`
-			${borderStyles.border1(colorStyles.greyScale6)}
 			${disabledStyle}
+			${borderStyles.borderNone}
 			
-			color: ${colorStyles.greyScale6};
+			background-color: ${colorStyles.greyScale7};
+			color: ${colorStyles.greyScale5};
 		`}
 `;
