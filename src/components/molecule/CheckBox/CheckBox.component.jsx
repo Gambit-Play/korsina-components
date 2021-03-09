@@ -1,17 +1,14 @@
-import { useState } from 'react';
 import { CheckBoxBlock } from './CheckBox.styles';
 import { ReactComponent as CheckMarkIcon } from '../../../assets/check-mark.svg';
 
-export const CheckBox = ({ label, isChecked }) => {
-	const [state, setState] = useState(false);
-
+export const CheckBox = ({ label, isChecked, handleOnChange }) => {
 	return (
-		<CheckBoxBlock isChecked={state}>
+		<CheckBoxBlock isChecked={isChecked}>
 			{label}
 			<input
 				type='checkbox'
-				checked={state}
-				onChange={() => setState(!state)}
+				checked={isChecked}
+				onChange={() => handleOnChange(!isChecked)}
 			/>
 			<span>
 				<CheckMarkIcon />

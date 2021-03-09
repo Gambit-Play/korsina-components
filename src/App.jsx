@@ -8,16 +8,17 @@ import { InputIconBlock } from './components/molecule/InputIcon/InputIcon.compon
 import { ReactComponent as UserIcon } from './assets/user.svg';
 import { CheckBox } from './components/molecule/CheckBox/CheckBox.component';
 import { RadioInput } from './components/molecule/RadioInput/RadioInput.component';
+import { Switch } from './components/molecule/Switch/Switch.component';
 
 function App() {
 	// REMOVE
-	const [isError, setIsError] = useState(false);
+	const [errorState, setIsError] = useState(false);
 	const [radioState, setRadioState] = useState(0);
+	const [checkedState, setCheckedState] = useState(false);
+	const [switchState, setSwitchState] = useState(false);
 
-	const handleOnChange = event => {
+	const radioOnChange = event => {
 		// REMOVE
-		console.log(event.target.value);
-		console.log('Radio State: ', radioState);
 		setRadioState(parseInt(event.target.value));
 	};
 
@@ -32,7 +33,7 @@ function App() {
 			<Box
 				padding={5}
 				onClick={() => {
-					setIsError(!isError);
+					setIsError(!errorState);
 				}}
 			>
 				<Button>is error?</Button>
@@ -42,36 +43,47 @@ function App() {
 			</Box>
 			<Box padding={5}>
 				<InputIconBlock
-					isError={isError}
+					isError={errorState}
 					icon={<UserIcon />}
 					errorMessage='Please fill in correctly!'
 				/>
 			</Box>
 			<Box padding={5}>
-				<CheckBox label='Check #1' />
-			</Box>
-			<Box padding={5} onClick={handleOnChange} vertical>
-				<RadioInput
+				<CheckBox
 					label='Check #1'
+					isChecked={checkedState}
+					handleOnChange={setCheckedState}
+				/>
+			</Box>
+			<Box padding={5} onClick={radioOnChange}>
+				<RadioInput
+					label='Radio #1'
 					value={1}
 					selected={radioState}
-					onClick={handleOnChange}
+					onClick={radioOnChange}
 				/>
 			</Box>
-			<Box padding={5} onClick={handleOnChange} vertical>
+			<Box padding={5} onClick={radioOnChange}>
 				<RadioInput
-					label='Check #2'
+					label='Radio #2'
 					value={2}
 					selected={radioState}
-					onClick={handleOnChange}
+					onClick={radioOnChange}
 				/>
 			</Box>
-			<Box padding={5} onClick={handleOnChange} vertical>
+			<Box padding={5} onClick={radioOnChange}>
 				<RadioInput
-					label='Check #3'
+					label='Radio #3'
 					value={3}
 					selected={radioState}
-					onClick={handleOnChange}
+					onClick={radioOnChange}
+				/>
+			</Box>
+			<Box margin={5}>
+				<Switch
+					handleOnChange={setSwitchState}
+					isChecked={switchState}
+					label='Switch #1'
 				/>
 			</Box>
 		</Box>
