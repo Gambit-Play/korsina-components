@@ -60,7 +60,7 @@ export const InputIcon = styled.div`
 	input {
 		color: ${colorStyles.greyScale3};
 		height: ${functionStyles.spacingPX(15)};
-		width: ${functionStyles.spacingPRCT(100)};
+		width: 100%;
 		transition: color ${animationStyles.animation1};
 
 		// Error Style

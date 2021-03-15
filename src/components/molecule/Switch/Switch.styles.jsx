@@ -5,6 +5,7 @@ import {
 	colorStyles,
 	functionStyles,
 	marginStyles,
+	shadowStyles,
 	sizeStyles,
 	textStyles,
 } from '../../../styles/global.styles';
@@ -25,6 +26,7 @@ export const SwitchBlock = styled.label`
 		.switch {
 			${colorStyles.bgPrimary}
 			${sizeStyles.sizePX(12)}
+            ${shadowStyles.shadow2}
 
 		    border-radius: 1000px;
 			transform: translate(14px, 0px);
