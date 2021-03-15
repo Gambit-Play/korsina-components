@@ -7,11 +7,6 @@ export const functionStyles = {
 	spacingPX: numberInPX => `${numberInPX * 2}px`,
 	fontSizePX: numberInPX => `${numberInPX * 2}px`,
 
-	// Unit: %
-	radiusPRCT: numberInPRCT => `${numberInPRCT}%`,
-	spacingPRCT: numberInPRCT => `${numberInPRCT}%`,
-	fontSizePRCT: numberInPRCT => `${numberInPRCT}%`,
-
 	// Unit: rem
 	radiusREM: numberInPX => `${numberInPX / 16}rem`,
 	spacingREM: numberInPX => `${numberInPX / 16}rem`,
@@ -144,6 +139,15 @@ export const alignStyles = {
 		display: flex;
 		flex-direction: column;
 	`,
+	stretch: css`
+		align-items: stretch;
+	`,
+	spaceBetween: css`
+		justify-content: space-between;
+	`,
+	spaceAround: css`
+		justify-content: space-around;
+	`,
 };
 
 // Global Mrgin Styles
@@ -221,6 +225,15 @@ export const shadowStyles = {
 	`,
 	shadow2: css`
 		box-shadow: 0 8px 16px 0 rgb(0 0 0 / 32%);
+	`,
+};
+
+// Gloabal Radius Styles
+export const radiusStyles = {
+	circle: size => css`
+		border-radius: 10000px;
+		height: ${functionStyles.spacingPX(size)};
+		width: ${functionStyles.spacingPX(size)};
 	`,
 };
 
